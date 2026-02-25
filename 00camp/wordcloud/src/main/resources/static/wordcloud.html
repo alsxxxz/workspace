@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="author" content="hissam" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SSAFY 15기 스타트캠프</title>
+
+    <link rel="shortcut icon" href="img/favicon.ico" />
+    <link rel="stylesheet" href="./css/wordcloud.css" />
+
+    <!-- axios -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+    <!-- jQuery + jqcloud -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="./js/jqcloud.min.js"></script>
+    <link rel="stylesheet" href="./css/jqcloud.min.css" />
+
+    <!-- Chart.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+  </head>
+
+  <body>
+    <!-- header 영역 start -->
+    <header class="site-header">
+      <div class="header-inner">
+        <a href="./index.html" class="brand">
+          <img src="./img/logo_square.png" class="brand-logo" alt="SSAFY" />
+        </a>
+
+        <nav class="nav nav-left">
+          <a href="./wordcloud.html" class="nav-link">관심사보기</a>
+        </nav>
+
+        <nav class="nav nav-mid">
+          <a href="./chatGPT.html" class="nav-link">Chat GPT에게 물어보기</a>
+        </nav>
+
+        <div class="profile">
+          <img src="./img/profile.png" class="profile-img" alt="" />
+        </div>
+
+        <div class="auth">
+          <a href="#" class="nav-link">로그인</a>
+        </div>
+
+        <div class="auth">
+          <a href="#" class="btn btn-primary">회원가입</a>
+        </div>
+      </div>
+    </header>
+    <!-- header 영역 end -->
+
+    <!-- center 영역 start -->
+    <main class="page">
+      <section class="title-wrap">
+        <div class="title-card">
+          <div class="title-card-inner">
+            <h2 class="page-title">싸피의 관심사</h2>
+          </div>
+        </div>
+      </section>
+
+      <section class="grid-area">
+        <div class="chart-box">
+          <canvas id="myChart"></canvas>
+        </div>
+
+        <div class="cloud-box">
+          <div id="comments" class="cloud-view"></div>
+        </div>
+      </section>
+    </main>
+    <!-- center 영역 end -->
+
+    <!-- footer 영역 start -->
+    <footer class="site-footer">
+      <span class="footer-text">
+        © 2026
+        <a
+          href="https://www.ssafy.com"
+          class="footer-link"
+          target="_blank"
+          rel="noreferrer"
+        >
+          SSAFY
+        </a>
+        . Copyright &copy; SAMSUNG All Rights Reserved.
+      </span>
+
+      <ul class="footer-links">
+        <li><a href="#" class="footer-link">지원하기</a></li>
+        <li><a href="#" class="footer-link">이용문의</a></li>
+        <li><a href="#" class="footer-link">이용약관</a></li>
+        <li><a href="#" class="footer-link">개인정보처리방침</a></li>
+      </ul>
+    </footer>
+    <!-- footer 영역 end -->
+
+    <script>
+      axios
+        .get("http://localhost:8080/word")
+        .then((response) => {
+          console.log(response);
+          makeWordCloud(response);
+        })
+        .catch((error) => {
+          console.error(error);
+        });
+
+      function makeWordCloud(response) {
+        const word_list = [];
+
+        response.data.forEach((data) => {
+          const word_cloud = {
+            text: data.word,
+            weight: data.weight,
+            link: "#",
+          };
+          word_list.push(word_cloud);
+        });
+
+        $("#comments").jQCloud("destroy");
+        $("#comments").jQCloud(word_list, {
+          autoResize: true,
+          delay: 50,
+        });
+
+        $("#comments")
+          .off("click")
+          .on("click", "a", (e) => {
+            e.preventDefault();
+            const word = e.target.textContent;
+            updateCount(word);
+          });
+
+        makeChart(word_list);
+      }
+
+      function updateCount(word) {
+        axios
+          .post(`http://localhost:8080/word/${word}`)
+          .then((response) => {
+            console.log(response);
+            makeWordCloud(response);
+          })
+          .catch((error) => {
+            console.error(error);
+          });
+      }
+
+      function makeChart(datas) {
+        datas.sort((a, b) => parseFloat(b.weight) - parseFloat(a.weight));
+
+        const label = [];
+        const data = [];
+
+        for (let i = 0; i < 6; i++) {
+          label.push(datas[i].text);
+          data.push(datas[i].weight);
+        }
+
+        const ctx = document.getElementById("myChart").getContext("2d");
+
+        const myChart = new Chart(ctx, {
+          type: "bar",
+          data: {
+            labels: label,
+            datasets: [
+              {
+                label: "# of Votes",
+                data: data,
+                backgroundColor: [
+                  "rgba(255, 99, 132, 0.2)",
+                  "rgba(54, 162, 235, 0.2)",
+                  "rgba(255, 206, 86, 0.2)",
+                  "rgba(75, 192, 192, 0.2)",
+                  "rgba(153, 102, 255, 0.2)",
+                  "rgba(255, 159, 64, 0.2)",
+                ],
+                borderColor: [
+                  "rgba(255, 99, 132, 1)",
+                  "rgba(54, 162, 235, 1)",
+                  "rgba(255, 206, 86, 1)",
+                  "rgba(75, 192, 192, 1)",
+                  "rgba(153, 102, 255, 1)",
+                  "rgba(255, 159, 64, 1)",
+                ],
+                borderWidth: 1,
+              },
+            ],
+          },
+          options: {
+            scales: {
+              yAxes: [
+                {
+                  ticks: {
+                    beginAtZero: true,
+                  },
+                },
+              ],
+            },
+          },
+        });
+      }
+    </script>
+  </body>
+</html>

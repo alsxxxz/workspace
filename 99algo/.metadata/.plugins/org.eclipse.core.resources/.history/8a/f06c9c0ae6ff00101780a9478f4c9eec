@@ -1,0 +1,33 @@
+package School;
+
+import java.io.*;
+import java.util.*;
+
+public class SubsMain {
+
+    static int N = 4;              // 전체 원소 개수 (1,2,3,4)
+    static int C = 0;              // 경우의 수 카운트
+    static int[] a = {1, 2, 3, 4};    // 원본 배열
+//    static boolean[] v = new boolean[N];  // 방문 체크 (사용했는지 확인)
+
+    static void subs(int cnt, String str) {
+        for (int i = 0; i < N; i++) {
+            if (cnt==N) {
+            	System.out.println(str); C++;
+                return;
+            }
+            //v[cnt] = true; //방문처리 
+            subs(cnt + 1, str+"_");
+            //v[cnt] = false;
+            subs(cnt + 1, str+a[cnt]);
+    	}
+    }
+
+    public static void main(String[] args) throws IOException {
+        C = 0;
+        subs(0, "");
+        System.out.println(C);
+    }
+
+}
+

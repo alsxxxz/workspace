@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ssafy.word.model.mapper.WordMapper">
+
+	<select id="listWord" resultType="wordDto">
+		SELECT word, weight
+		FROM wordcloud
+	</select> 
+
+	<insert id="updateCount" parameterType="String">
+		INSERT INTO wordcloud
+		VALUES (#{word} , 1)
+		ON DUPLICATE KEY UPDATE
+		weight = weight + 0.3;
+	</insert>
+	
+</mapper>
+

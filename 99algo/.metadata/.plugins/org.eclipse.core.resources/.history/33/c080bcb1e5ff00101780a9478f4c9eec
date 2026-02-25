@@ -1,0 +1,38 @@
+package School;
+
+import java.io.*;
+import java.util.*;
+
+public class SubsMain {
+
+    static int N = 4;              // 전체 원소 개수 (1,2,3,4)
+    //static int R = 3;              // 뽑을 개수
+    static int C = 0;              // 경우의 수 카운트
+
+    static int[] a = {1, 2, 3, 4};    // 원본 배열
+    //static int[] b = new int[R];   // 선택된 원소를 담을 배열 (크기 3)
+    static boolean[] v = new boolean[N];  // 방문 체크 (사용했는지 확인)
+
+    static void subs(int cnt) { //depth, index 둘 다 가능.
+
+        for (int i = 0; i < N; i++) {
+            if (cnt==N) {
+            	System.out.println(Arrays.toString(v)); C++;
+                return;
+            }
+            v[cnt] = true; //방문처리 
+            subs(cnt + 1);
+            v[cnt] = false;
+            subs(cnt + 1);
+        
+    	}
+    }
+
+    public static void main(String[] args) throws IOException {
+        C = 0;
+        subs(0);
+        System.out.println(C);
+    }
+
+}
+

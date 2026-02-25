@@ -1,0 +1,14 @@
+2026-01-20 11:19:04,704 [Worker-6: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is not available. Remote download required.
+2026-01-20 11:23:29,874 [Worker-1: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2026-01-20 13:33:55,720 [Worker-12: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2026-01-20 14:10:36,399 [ModalContext] INFO  o.e.jgit.transport.TransportHttp - URI 'https://lab.ssafy.com/alsxxxz/java_ws_04_2': following HTTP redirect #0  https://lab.ssafy.com/alsxxxz/java_ws_04_2/ -> https://lab.ssafy.com/alsxxxz/java_ws_04_2.git/
+2026-01-20 14:10:44,481 [ModalContext] INFO  o.e.jgit.transport.TransportHttp - URI 'https://lab.ssafy.com/alsxxxz/java_ws_04_2': following HTTP redirect #0  https://lab.ssafy.com/alsxxxz/java_ws_04_2/ -> https://lab.ssafy.com/alsxxxz/java_ws_04_2.git/
+2026-01-20 14:53:11,133 [Worker-6: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2026-01-20 16:13:28,994 [Worker-2: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2026-01-20 17:26:13,985 [Worker-41: Push to java_ws_04_2 refs/heads/master - origin] INFO  o.e.jgit.transport.TransportHttp - URI 'https://lab.ssafy.com/alsxxxz/java_ws_04_2': following HTTP redirect #0  https://lab.ssafy.com/alsxxxz/java_ws_04_2/ -> https://lab.ssafy.com/alsxxxz/java_ws_04_2.git/
+2026-01-20 17:26:20,421 [Worker-34: Push to java_ws_04_2 - origin] INFO  o.e.jgit.transport.TransportHttp - URI 'https://lab.ssafy.com/alsxxxz/java_ws_04_2': following HTTP redirect #0  https://lab.ssafy.com/alsxxxz/java_ws_04_2/ -> https://lab.ssafy.com/alsxxxz/java_ws_04_2.git/
+2026-01-28 13:49:34,887 [Worker-10: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.
+2026-01-28 17:06:17,075 [Worker-2: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2026-01-29 09:31:30,710 [Worker-6: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2026-02-02 12:08:50,355 [Worker-6: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2026-02-02 15:16:07,095 [Worker-6: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.

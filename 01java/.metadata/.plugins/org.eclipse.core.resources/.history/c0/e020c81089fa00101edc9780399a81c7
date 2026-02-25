@@ -1,0 +1,11 @@
+package day08;
+
+public class ExceptionTest {
+    public static void main(String[] args) {
+        System.out.println("start");
+        String s = null; //NullPointException >이거 암기
+        //String s -> 이거 시험문제..a
+        System.out.println(s.length());
+        System.out.println("end");
+    }
+}

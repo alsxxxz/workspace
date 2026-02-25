@@ -1,0 +1,36 @@
+package day07;
+
+import java.util.Arrays;
+import java.util.Comparator;
+
+class Book implements Comparable<Book>{
+    String isbn;
+    String title;
+    int price;
+
+    public Book(String isbn, String title, int price) {
+        this.isbn = isbn; this.title = title; this.price = price;
+    }
+
+    @Override
+    public String toString() {
+        return isbn + "/" + title + "/" + price;
+    }
+
+	@Override //이게 생김
+	public int compareTo(Book o) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+}
+public class LambdaSort {
+	public static void main(String[] args) {
+		Book[] ba = {
+				new Book("123", "자바", 2000);
+				new Book("123", "알고", 2000);
+				new Book("123", "가곡", 2000);
+		};
+		System.out.println(Arrays.toString(ba));
+		Arrays.sort(ba);
+
+}

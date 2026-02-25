@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="author" content="hissam" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SSAFY 15기 스타트캠프</title>
+
+    <link rel="shortcut icon" href="img/favicon.ico" />
+    <link rel="stylesheet" href="./css/index.css" />
+  </head>
+
+  <body>
+    <!-- header 영역 start -->
+    <header class="site-header">
+      <div class="header-inner">
+        <a href="./index.html" class="brand">
+          <img src="img/logo_square.png" class="brand-logo" alt="SSAFY" />
+        </a>
+
+        <nav class="nav nav-left">
+          <a href="./wordcloud.html" class="nav-link">관심사보기</a>
+        </nav>
+
+        <nav class="nav nav-mid">
+          <a href="./chatGPT.html" class="nav-link">Chat GPT에게 물어보기</a>
+        </nav>
+
+        <div class="profile">
+          <img class="profile-img" alt="" src="./img/profile.png" />
+        </div>
+
+        <div class="auth">
+          <a href="#" class="nav-link">로그인</a>
+        </div>
+
+        <div class="auth">
+          <a href="#_" class="btn btn-primary">회원가입</a>
+        </div>
+      </div>
+    </header>
+    <!-- header 영역 end -->
+
+    <!-- center 영역 start -->
+    <div id="main" class="hero"></div>
+
+    <main class="page">
+      <section class="cards">
+        <!-- Card 1 -->
+        <article class="card card-green">
+          <div class="card-topbar"></div>
+          <div class="card-body">
+            <h2 class="card-title">싸피</h2>
+            <p class="card-desc">입과를 환영합니다.</p>
+            <p class="card-big">화이팅!~!</p>
+
+            <ul class="check-list">
+              <li class="check-item">
+                <span class="check-icon" aria-hidden="true"></span>
+                1일 1알고
+              </li>
+              <li class="check-item">
+                <span class="check-icon" aria-hidden="true"></span>
+                복습, 실습, 과제 타임어택!!!
+              </li>
+              <li class="check-item">
+                <span class="check-icon" aria-hidden="true"></span>
+                담당 프로님, 강사님과 소통하기!!!
+              </li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- Card 2 -->
+        <article class="card card-purple">
+          <div class="card-topbar"></div>
+          <div class="card-body">
+            <p class="card-subtitle">여러분의</p>
+            <h2 class="card-title-xl">최대 관심사를</h2>
+            <p class="card-title-lg">알아볼까요???</p>
+          </div>
+          <div class="card-footer">
+            <button
+              type="button"
+              class="btn btn-round btn-purple"
+              onclick="location.href='./wordcloud.html'"
+            >
+              알아보기
+            </button>
+          </div>
+        </article>
+
+        <!-- Card 3 -->
+        <article class="card card-blue">
+          <div class="card-topbar"></div>
+          <div class="card-body">
+            <h2 class="card-title">Chat GPT에게</h2>
+            <p class="card-desc">연관 단어 물어보기.</p>
+            <p class="card-big">단어만 입력해주세요</p>
+          </div>
+          <div class="card-footer">
+            <button
+              type="button"
+              class="btn btn-round btn-blue"
+              onclick="location.href='./chatGPT.html'"
+            >
+              물어보기
+            </button>
+          </div>
+        </article>
+      </section>
+    </main>
+    <!-- center 영역 end -->
+
+    <!-- footer 영역 start -->
+    <footer class="site-footer">
+      <span class="footer-text">
+        © 2026
+        <a href="https://www.ssafy.com" class="footer-link" target="_blank" rel="noreferrer"
+          >SSAFY</a
+        >. Copyright &copy; SAMSUNG All Rights Reserved.
+      </span>
+
+      <ul class="footer-links">
+        <li><a href="#" class="footer-link">지원하기</a></li>
+        <li><a href="#" class="footer-link">이용문의</a></li>
+        <li><a href="#" class="footer-link">이용약관</a></li>
+        <li><a href="#" class="footer-link">개인정보처리방침</a></li>
+      </ul>
+    </footer>
+    <!-- footer 영역 end -->
+  </body>
+</html>

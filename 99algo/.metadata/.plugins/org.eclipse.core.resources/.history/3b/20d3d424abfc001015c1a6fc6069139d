@@ -1,0 +1,35 @@
+package Algo;
+import java.util.*;
+public class StackAPITest {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Stack<String> stack = new  Stack<>(); {
+		System.out.println(stack.isEmpty()+"//"+stack.size());
+		stack.push("손예림");
+		System.out.println(stack);
+		stack.push("김인송");
+		System.out.println(stack);
+		stack.push("조의재");
+		System.out.println(stack);
+		stack.push("김현호");
+		System.out.println(stack);
+		stack.push("이사야");
+		System.out.println(stack);
+		stack.push("김준형");
+		System.out.println(stack);
+		System.out.println(stack.isEmpty()+"//"+stack.size());
+		System.out.println(stack.peek());
+		System.out.println(stack);
+		
+		System.out.println("------------------");
+		while(!stack.isEmpty()) {
+		//for(int i=0; i<7; i++) {
+			System.out.println(stack.pop());
+			System.out.println(stack);
+		}
+		
+		}
+	}
+
+}
