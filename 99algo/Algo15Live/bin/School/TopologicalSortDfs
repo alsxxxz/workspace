@@ -1,0 +1,35 @@
+
+import java.io .*;
+
+public class TopologicalSortDfs{
+static int N;
+static List<Integer>[] 6;//
+static boolean[] v;
+static ArrayDeque<Integer> s=new ArrayDeque<>();
+
+public static void main(String[] args) throws Exceptionf
+Scanner sc=new Scanner(System. in);
+#=sc.nextInt();
+int E=sc.nextInt();
+G=new List[1+M; for(int i=0; i<1+N; i++) G[i]=new ArrayList<>();//
+v=new boolean[1+M;
+for(int i=0; i<E; i++){
+int a=sc.nextInt();
+int b=sc.nextInt();
+G[a].add(b);//
+
+for(int i=1; i<1+N; i++){
+if(!Mi]) dfs(i);
+
+while(!s.isEmpty()) System.out.print(s.pop()+" ");
+sc.close();
+
+static void dfs(int i){
+Mi]=true;
+for(int j:([i]){
+if(!nj]){
+dfs(j);
+
+s.push(i);//
+
+e /*
