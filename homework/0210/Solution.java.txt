@@ -1,0 +1,55 @@
+import java.util.*;
+import java.io.*;
+
+class Solution {
+    public static void main(String[] args) throws Exception {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        int T = Integer.parseInt(br.readLine());
+        
+        for(int t=1; t<=T; t++) {
+            int n = Integer.parseInt(br.readLine());
+            int[][] a = new int[n][4];
+            boolean[] dead = new boolean[n];
+            
+            for(int i=0; i<n; i++) {
+                StringTokenizer st = new StringTokenizer(br.readLine());
+                a[i][0] = Integer.parseInt(st.nextToken())*2;
+                a[i][1] = Integer.parseInt(st.nextToken())*2;
+                a[i][2] = Integer.parseInt(st.nextToken());
+                a[i][3] = Integer.parseInt(st.nextToken());
+            }
+            
+            int[] dx = {0,0,-1,1};
+            int[] dy = {1,-1,0,0};
+            int ans = 0;
+            
+            for(int time=0; time<=4000; time++) {
+                Map<Long,List<Integer>> map = new HashMap<>();
+                
+                for(int i=0; i<n; i++) {
+                    if(dead[i]) continue;
+                    long key = ((long)a[i][0]<<20) | a[i][1];
+                    map.computeIfAbsent(key, k->new ArrayList<>()).add(i);
+                }
+                
+                for(List<Integer> list : map.values()) {
+                    if(list.size()>1) {
+                        for(int i : list) {
+                            ans += a[i][3];
+                            dead[i] = true;
+                        }
+                    }
+                }
+                
+                for(int i=0; i<n; i++) {
+                    if(!dead[i]) {
+                        a[i][0] += dx[a[i][2]];
+                        a[i][1] += dy[a[i][2]];
+                    }
+                }
+            }
+            
+            System.out.println("#"+t+" "+ans);
+        }
+    }
+}
