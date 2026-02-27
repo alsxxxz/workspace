@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      div {
+        border: 1px solid black;
+        margin: 10px;
+      }
+      img {
+        position: relative;
+        left: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <ul>
+      <li><button onclick="simpleAdd()">api를 이용한 dom 추가</button></li>
+      <li><button onclick="moreSimpleAdd()">innerText를 이용한 dom 추가</button></li>
+    </ul>
+
+    <hr />
+    <div id="div-store"><div id="base">기준!</div></div>
+  </body>
+  <script>
+    const simpleAdd = () => {
+      const newDiv = document.createElement("div"); // 한땀 한땀..
+      const text = document.createTextNode(new Date().toLocaleTimeString());
+      const attr = document.createAttribute("style");
+      attr.value = "background: cyan";
+      newDiv.append(text);
+      newDiv.setAttributeNode(attr);
+
+      const divStore = document.querySelector("#div-store");
+      const baseDiv = document.querySelector("#base");
+
+      //TODO: 01. 다양한 삽입 위치를 확인해보세요.
+             divStore.prepend(newDiv);
+
+      // END
+    };
+
+    // TODO: 02. innerHTML을 이용해서 새로운 div를 추가해보자.
+
+    //END
+  </script>
+</html>

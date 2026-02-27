@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <select id="sido" data-type="시도">
+      <option value="" selected disabled>시도 선택</option>
+    </select>
+    <select id="gugun" data-type="구군">
+      <option value="" selected disabled>구군 선택</option>
+    </select>
+    <select id="dong" data-type="읍면동">
+      <option value="" selected disabled>읍면동 선택</option>
+    </select>
+  </body>
+  <script>
+    // TODO: 01. 개별적으로 발급받은 키를 등록하세요.
+     const key_vworld = "v_world의 인증키";
+
+    // END
+
+    const sido = document.querySelector("#sido");
+    const gugun = document.querySelector("#gugun");
+    const dong = document.querySelector("#dong");
+
+    /*
+      특정 select의 option 내용을 업데이트 하는 함수
+       - select: select 객체
+       - data: 표현할 데이터 [{key, label}]
+    */
+    const updateSelect = (select, data) => {
+      const type = select.dataset.type;
+      select.innerHTML = `<option value="" selected disabled>${type} 선택</option>`;
+      if (data) {
+        data.forEach((element) => {
+          select.innerHTML += `<option value="${element.key}">${element.label}</option>`;
+        });
+      }
+    };
+
+    /*
+    get 방식으로 fetch 처리하기 위한 함수
+     - url: 요청 url
+     - param: 요청 parameter
+     - isXml: 요청 방식이 xml 인지 여부
+    */
+
+    const getFetch = async (url, param, isXml) => {
+      try {
+        const queryString = new URLSearchParams(param).toString();
+        const response = await fetch(url + "?" + queryString);
+        let result = isXml ? await response.text() : await response.json();
+        console.log("요청 URL: " + url, param, result);
+        return result;
+      } catch (e) {
+        console.log(e);
+        throw e;
+      }
+    };
+
+    const initSidoSelect = async function () {
+      //TODO: 02. 화면이 로딩되면 시도 정보를 업데이트 하세요.
+      //  https://www.vworld.kr/dtna/dtna_apiSvcFc_s001.do
+
+      //END
+    };
+
+    sido.addEventListener("change", async function () {
+      // TODO: 03. 시도를 선택하면 구군 정보를 업데이트 하세요.
+      //  https://www.vworld.kr/dtna/dtna_apiSvcFc_s001.do
+
+      //END
+    });
+
+    gugun.addEventListener("change", async function () {
+      //TODO: 04. 구군 선택 시 dong을 업데이트 해보세요.
+      //  https://www.vworld.kr/dtna/dtna_apiSvcFc_s001.do
+
+      //END
+    });
+
+    dong.addEventListener("change", async function () {
+      //TODO: 05. 동 선택 시 현재까지의 주소를 출력해보세요. 맵 호출 시 [{address, utmk, label}]를 전달한다.
+      // const sidoLabel = sido.options[sido.selectedIndex].text;
+
+      //END
+    });
+
+    // 초기화 코드 호출
+    initSidoSelect();
+  </script>
+</html>

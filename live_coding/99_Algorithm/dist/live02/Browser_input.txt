@@ -1,0 +1,25 @@
+>> 입력
+V http://www.google.com
+V http://www.naver.com
+B
+V http://edu.ssafy.com
+F
+B
+F
+B
+B
+B
+Q
+
+
+>> 출력
+http://www.google.com
+http://www.naver.com
+http://www.google.com
+http://edu.ssafy.com
+Ignored
+http://www.google.com
+http://edu.ssafy.com
+http://www.google.com
+http://www.ssafy.com/
+Ignored

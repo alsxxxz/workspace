@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Image Caption Overlay</title>
+    <style>
+      /*기본  ------------------------------------------------------------------------*/
+      .container {
+        padding: 20px;
+        background-color: #f0f0f0;
+      }
+      .box {
+        width: 100px;
+        height: 100px;
+        background-color: #3498db;
+        margin: 10px;
+        display: inline-block;
+      }
+
+      .reference-line {
+        border-bottom: 2px dashed #666;
+        margin: 20px 0;
+      }
+
+      .moved {
+        position: relative;
+        top: 20px;
+        left: 20px;
+        background-color: red;
+      }
+    </style>
+
+    <style>
+      .menu-item {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #f0f0f0;
+        margin: 10px;
+        position: relative; /* 부모 요소에 relative 설정 */
+      }
+
+      .notification-badge {
+        /*TODO: 01. 배지를 텍스트 우측 상단에 배치해보자.*/
+
+        /*END*/
+        background-color: red;
+        color: white;
+        border-radius: 50%;
+        padding: 2px 6px;
+        font-size: 12px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="reference-line">기준선: 빨간 박스 이동 (top: 20px, left: 20px)</div>
+      <div class="box">Normal</div>
+      <div class="box moved">Relative</div>
+      <div class="box">Normal</div>
+    </div>
+    <hr />
+    <div class="menu-item">
+      메시지
+      <span class="notification-badge">3</span>
+    </div>
+    <div class="menu-item">
+      알림
+      <span class="notification-badge">5</span>
+    </div>
+  </body>
+</html>

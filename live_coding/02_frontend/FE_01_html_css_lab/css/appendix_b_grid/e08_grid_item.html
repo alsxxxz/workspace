@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      .item {
+        background-color: lightblue;
+        padding: 20px;
+        border: 1px solid blue;
+      }
+
+      /* TODO: grid item 정렬을 위한 다양한 속성을 테스트해보자.*/
+      .container {
+        border: 1px solid black;
+        display: grid;
+        width: 100%;
+        height: 400px;
+        gap: 10px;
+        grid-template-columns: auto auto auto auto;
+        grid-template-rows: auto;
+      }
+
+      /* 개별 아이템 크기 설정 */
+      #header1 {
+        width: 150px;
+        height: 100px;
+      }
+
+      #header2 {
+        width: 200px;
+        height: 80px;
+      }
+
+      #header3 {
+        width: 120px;
+        height: 150px;
+      }
+
+      #header4 {
+        width: 180px;
+        height: 120px;
+      }
+
+      #body1 {
+        width: 160px;
+        height: 90px;
+      }
+
+      #body2 {
+        width: 140px;
+        height: 130px;
+      }
+
+      #body3 {
+        font-size: 2em;
+        width: 170px;
+        height: 110px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="item" id="header1">Lorem, ipsum.</div>
+      <div class="item" id="header2">Lorem ipsum dolor sit amet.</div>
+      <div class="item" id="header3">Lorem.</div>
+      <div class="item" id="header4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum, ullam!</div>
+      <div class="item" id="body1">Item 5</div>
+      <div class="item" id="body2">Item 6</div>
+      <div class="item" id="body3">Item 7</div>
+    </div>
+  </body>
+</html>

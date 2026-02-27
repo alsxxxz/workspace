@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <style>
+      /* specificity: 1,0,0 */
+      #unique {
+        color: green;
+      }
+      /* specificity: 0,1,0 */
+      .text {
+        color: blue;
+      }
+      /* specificity: 0,2,0 */
+      .text.highlight {
+        color: purple;
+      }
+      /* specificity: 0,0,1 */
+      p {
+        color: red;
+      }
+    </style>
+
+    <p>Basic paragraph (001)</p>
+    <p class="text">Class selector (010)</p>
+    <p id="unique" class="text">왜 이 p는 색상이 green일까?</p>
+    <p class="text highlight">Multiple classes (011)</p>
+  </body>
+</html>

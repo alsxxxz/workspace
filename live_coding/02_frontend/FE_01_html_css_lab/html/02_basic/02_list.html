@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>List</title>
+  </head>
+  <body>
+    <h2>중첩 리스트</h2>
+    <ul>
+      <li>
+        공과대학
+        <ol>
+          <li>컴퓨터공학과</li>
+          <li>전자공학과</li>
+        </ol>
+      </li>
+      <li>
+        경영대학
+        <ol>
+          <li>경영학과</li>
+          <li>회계학과</li>
+        </ol>
+      </li>
+    </ul>
+  <!--
+약어            설명                        사용 예
+! + tab         HTML5 문서의 기본 구조 생성
+>               하위 요소 생성              header>ul>li
++               동급 요소 생성              section>article>h2+p
+*               반복 개수 지정              ul>li*5
+# , .           각각 id와 class 지정        ul#menu>li.item*3
+( )             그룹핑                      div.container>(header>nav>ul>li*5>a)+(#content>section)+footer
+[attribute]     속성 지정                   td[title="name" colspan="5"]
+{ }             텍스트 입력                 a.button{Click Me}
+$               넘버링                      ul.list>li.item$*5>{$}
+-->
+    <!--TODO: 01. 야구의 포지션을 내야수, 외야수, 기타로 그룹핑해서 표현해보자.-->
+    <!-- 단 그룹은 순서가 없고 포지션은 우측이 우선순위가 높다.-->
+
+    <!--END-->
+  </body>
+</html>

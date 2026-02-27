@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>geolocation api</title>
+    <style>
+      input {
+        width: 80px;
+        margin-bottom: 10px;
+      }
+
+      tr:nth-child(2n) {
+        background: rgba(0, 255, 0, 0.2);
+      }
+
+      tr:nth-child(2n + 1) {
+        background: rgba(0, 0, 255, 0.2);
+      }
+
+      #infoTable td input {
+        width: 450px;
+      }
+
+      td:nth-child(2n + 1) {
+        width: 150px;
+      }
+    </style>
+  </head>
+  <body>
+    <label for="timeout">타임아웃(초)</label>
+    <input type="number" min="0" id="timeout" value="10" />
+    <button id="getLocation">현재 나의 위치</button>
+    <hr />
+    <table id="infoTable">
+      <tr>
+        <th>속성</th>
+        <th>값</th>
+      </tr>
+      <tr>
+        <td>정보 획득 시각</td>
+        <td><input type="text" id="timestamp" /></td>
+      </tr>
+      <tr>
+        <td>위도(°)</td>
+        <td><input type="text" id="latitude" /></td>
+      </tr>
+      <tr>
+        <td>경도(°)</td>
+        <td><input type="text" id="longitude" /></td>
+      </tr>
+      <tr>
+        <td>오차(m)</td>
+        <td><input type="text" id="accuracy" /></td>
+      </tr>
+      <tr>
+        <td>에러메시지</td>
+        <td><input type="text" id="errorMessage" /></td>
+      </tr>
+    </table>
+  </body>
+  <script src="/08_bom/05-01_getGeolocation.js"></script>
+</html>

@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    function helloThis() {
+      console.log(this);
+    }
+
+    helloThis(); // window
+
+    const someObj = {
+      myfunc: helloThis,
+    };
+    someObj.myfunc(); // someObj
+
+    const user = { name: "김철수" };
+
+    helloThis.call(user); // this 고정
+
+    function Cat(name) {
+      this.name = name;
+    }
+    const myCat = new Cat("고리");
+    console.log(myCat.name); // '고리'
+
+    const arr = ["Hello", "JavaScript", "World"];
+    arr.sort(function (a, b) {
+      console.log(this);
+      return a.length - b.length;
+    });
+    console.log(arr);
+    arr.sort((a, b) => {
+      console.log(this);
+      return a.length - b.length;
+    });
+    console.log(arr);
+
+    const manager = {
+      title: "과일 매니저",
+      fruits: ["apple", "kiwi", "banana"],
+
+      sortFruits: function () {
+        console.log(`--- ${this.title}가 정렬을 시작합니다 ---`);
+
+        // 1. 일반 함수를 sort의 콜백으로 사용: 내부적으로 전역 레벨에서 호출 됨 - 전역 객체에 this binding
+        this.fruits.sort(function (a, b) {
+          console.log("일반함수 this.title:", this.title);
+          return a.length - b.length;
+        });
+
+        // 2. 화살표 함수를 sort의 콜백으로 사용: 자체적으로 바인딩 하지 않고 자신이 속한 외부의 this를 그대로 사용
+        this.fruits.sort((a, b) => {
+          console.log("화살표함수 this.title:", this.title);
+          return a.length - b.length;
+        });
+      },
+    };
+
+    manager.sortFruits();
+  </script>
+</html>

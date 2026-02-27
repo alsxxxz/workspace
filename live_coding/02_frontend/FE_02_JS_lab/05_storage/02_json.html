@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>json</title>
+  </head>
+  <body>
+    <form>
+      <input type="text" id="name" placeholder="Name"/><br />
+      <input type="number" id="age" placeholder="Age" value="20"/><br />
+      <input type="checkbox" id="isAdmin" checked/> Is Admin<br />
+      <input type="text" id="courses" placeholder="Courses (쉼표로 구분)" value="자바, 웹"/><br />
+      <button type="button" onclick="save()">Save</button>
+      <button type="reset">Reset</input>
+      <button type="button" onclick="load()">load</button>
+    </form>
+  </body>
+  <script>
+    const storage = window.localStorage;
+    const save = () => {
+      const newUser = {
+        name: document.getElementById("name").value,
+        age: Number(document.getElementById("age").value),
+        isAdmin: document.getElementById("isAdmin").checked,
+        courses: document
+          .getElementById("courses")
+          .value.split(",")
+          .map((c) => c.trim()),
+      };
+      console.log(newUser, newUser.toString());
+      //TODO: 01. newUser를 JSON 문자열로 변환하여 localStorage에 저장하세요.
+
+      //END
+    };
+
+    const load = () => {
+      //TODO: 02. localStorage에서 user 키로 저장된 값을 가져와서 화면에 반영하세요.
+
+      //END
+    };
+  </script>
+</html>

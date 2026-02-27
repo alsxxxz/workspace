@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>keyboard event</title>
+  </head>
+  <body>
+    <input type="text" id="userId" placeholder="id please.." />
+    <input type="text" id="userPass" placeholder="pass please.." />
+    <output id="output"></output>
+    <ul id="keyList"></ul>
+  </body>
+
+  <script>
+    const inputUserId = document.getElementById("userId");
+    const output = document.getElementById("output");
+    const keyList = document.getElementById("keyList");
+
+    inputUserId.addEventListener("keydown", (event) => {
+      const newLi = `<li>Key Down: key: ${event.key}, code: ${event.code}, 입력 글자 수: ${inputUserId.value.length}</li>`;
+      keyList.innerHTML = newLi + keyList.innerHTML;
+
+      //TODO: 01. Enter가 눌리면 keyList를 초기화 하고 userPass에 포커스를 이동하세요.
+
+      //END
+    });
+
+    inputUserId.addEventListener("keyup", (event) => {
+      //TODO: 02. 입력 글자 수가 10글자를 넘어가면 경고창을 띄우세요.
+
+      //END
+      output.value = `입력 글자 수: ${inputUserId.value.length}`;
+    });
+  </script>
+</html>

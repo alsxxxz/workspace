@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    ul {
+      margin-bottom: 50px;
+      border: 1px solid #333;
+    }
+    li {
+      border: 1px solid #333;
+    }
+    /* list-style-type: disc | circle | square | decimal | decimal-leading-zero |
+           lower-roman | upper-roman | lower-greek | lower-alpha | upper-alpha | none */
+    .type-test {
+      list-style-type: square;
+    }
+
+    /* list-style-position: inside | outside */
+    .position-test {
+      list-style-position: inside;
+      background-color: #f0f0f0;
+    }
+
+    /* list-style-image: url('이미지경로') | none */
+    .image-test {
+      list-style-image: url("https://placehold.co/10");
+    }
+
+    /* list-style: type position image */
+    .combined-test {
+      list-style: square inside url("https://placehold.co/10");
+    }
+  </style>
+  <body>
+    <br /><br /><br /><br />
+
+    <ul class="type-test">
+      <li>목록의 기호를 다양하게 변경할 수 있습니다.</li>
+      <li>숫자, 문자, 기호 등 여러 유형이 있습니다.</li>
+    </ul>
+
+    <ul class="position-test">
+      <li>목록 기호의 위치를 조정할 수 있습니다.</li>
+      <li>들여쓰기와 관련이 있습니다.</li>
+    </ul>
+
+    <ul class="image-test">
+      <li>목록 기호 대신 이미지를 사용할 수 있습니다.</li>
+      <li>원하는 이미지로 기호를 대체합니다.</li>
+    </ul>
+
+    <ul class="combined-test">
+      <li>여러 속성을 한번에 지정할 수 있습니다.</li>
+      <li>type, position, image 순서로 작성합니다.</li>
+    </ul>
+  </body>
+</html>

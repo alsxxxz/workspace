@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    // 09_ajax/04_promisechaining.html
+    console.log("1. start");
+    Promise.resolve("gogogo") // 언제나 성공하는 Promise 반환
+      .then((val) => {
+        // Pending 상태의 Promise 반환 - 여기에서의 동작(onfulfilled/onrejected)에 의해 다음 동작 결정
+        return new Promise(function (onfulfilled, onrejected) {
+          console.log(`2. ${val}`);
+          setTimeout(function () {
+            onfulfilled(val + " fulfilled");
+            //onrejected(val + " rejected");
+          }, 1000);
+        });
+      })
+      .catch((err) => {
+        console.log(`3. ${err}`); // return undefined
+      })
+      .then((val) => {
+        console.log(`4. ${val}`);
+        throw new Error("실패");
+      })
+      .then(function (val) {
+        console.log(`5. ${val}`);
+      })
+      .catch((err) => {
+        console.log(`6. ${err}`);
+      });
+    console.log(`7. done`);
+  </script>
+</html>

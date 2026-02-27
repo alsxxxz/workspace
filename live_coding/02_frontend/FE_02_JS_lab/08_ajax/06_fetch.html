@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>fetch</title>
+    <style>
+      #post-info {
+        max-width: 400px;
+        margin: 20px auto;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        background-color: #f9f9f9;
+      }
+
+      #post-info h2 {
+        color: #333;
+        margin-bottom: 10px;
+      }
+
+      #post-info p {
+        color: #666;
+        margin-bottom: 15px;
+      }
+
+      #post-info img {
+        border-radius: 50%;
+        border: 3px solid #fff;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+        margin-top: 10px;
+      }
+      #container {
+        display: flex;
+      }
+      #control {
+        margin-right: 10px;
+        padding-right: 20px;
+        border-right: 1px solid brown;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>AJAX 통신 연습</h1>
+    <div id="container">
+      <div id="control">
+        <input type="number" id="post-id" placeholder="Enter Post ID" /><br />
+        <button id="get-post">Get Post</button>
+        <br />
+        <hr />
+        <br />
+        <div id="create-post">
+          <input type="number" id="userId" value="1" /><br />
+          <input type="text" id="title" placeholder="Enter title" /><br />
+          <textarea id="body" row="5" cols="20"></textarea>
+
+          <br />
+          <button id="post-post">Create Post</button>
+        </div>
+      </div>
+      <div id="post-info"></div>
+    </div>
+  </body>
+  <script>
+    const postInfo = document.querySelector("#post-info");
+
+    document.querySelector("#get-post").addEventListener("click", async () => {
+      const postId = document.querySelector("#post-id").value;
+      if (!postId) {
+        alert("Please enter a post ID");
+        return;
+      }
+      //TODO: 01. fetch를 이용해서 https://jsonplaceholder.typicode.com/posts/${postId}를 조회해서 #post-info에 출력해보세요.
+
+      //END
+    });
+
+    document.querySelector("#post-post").addEventListener("click", async () => {
+      const title = document.querySelector("#title").value;
+      const body = document.querySelector("#body").innerHTML;
+      const userId = document.querySelector("#userId").value;
+
+      const postInfo = document.querySelector("#post-info");
+      //TODO: 02. https://jsonplaceholder.typicode.com/posts를 통해 사용자 정보를 추가해보세요.
+
+      //END
+    });
+  </script>
+  <script></script>
+</html>

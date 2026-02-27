@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Responsive Navigation</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      nav {
+        background: #333;
+        padding: 1rem;
+      }
+
+      .nav-links {
+        list-style: none;
+        display: flex;
+        gap: 2rem;
+      }
+      /* hamburger를 클릭했을 때 추가되는 active class에 대한 동작*/
+      .nav-links.active {
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        background: #333;
+        padding: 1rem;
+        z-index: 100;
+      }
+
+      .nav-links a {
+        color: white;
+        text-decoration: none;
+        font-size: 1.1rem;
+      }
+
+      /* hambur는 일단 숨겨둠: */
+      .hamburger {
+        display: none;
+        cursor: pointer;
+        color: white;
+        font-size: 1.5rem;
+      }
+      .card {
+        padding: 20px;
+        border-radius: 10px;
+        margin: 20px;
+        transition: all 0.3s ease;
+      }
+
+      .content {
+        font-size: 18px;
+        text-align: center;
+      }
+      /* Mobile view */
+      @media screen and (max-width: 768px) {
+        /*TODO: 01. .모바일 view가 되면 .hamburger를 보이고 .nav-links를 숨기자.*/
+
+        /*END*/
+
+        .card {
+          background-color: #f44336;
+          color: white;
+          margin: 15px;
+          transform: scale(0.95);
+        }
+        .content::after {
+          content: " (Mobile View)";
+        }
+      }
+
+      /* Tablet view */
+      @media screen and (min-width: 768px) and (max-width: 1023px) {
+        .card {
+          background-color: #2196f3;
+          color: white;
+          max-width: 400px;
+          margin: 30px auto;
+          transform: rotate(2deg);
+        }
+        .content::after {
+          content: " (Tablet View)";
+        }
+      }
+
+      /* Desktop view */
+      @media screen and (min-width: 1024px) {
+        .card {
+          background-color: #4caf50;
+          color: white;
+          max-width: 600px;
+          margin: 50px auto;
+          box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+        .content::after {
+          content: " (Desktop View)";
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <div class="hamburger">☰</div>
+      <ul class="nav-links">
+        <li><a href="#home">홈</a></li>
+        <li><a href="#about">소개</a></li>
+        <li><a href="#services">서비스</a></li>
+        <li><a href="#contact">연락처</a></li>
+      </ul>
+    </nav>
+    <div class="card">
+      <div class="content"> 화면 크기를 조절해보세요! 카드의 색상과 스타일이 변합니다. </div>
+    </div>
+
+    <script>
+      const hamburger = document.querySelector(".hamburger");
+      const navLinks = document.querySelector(".nav-links");
+
+      hamburger.addEventListener("click", () => {
+        navLinks.classList.toggle("active");
+      });
+    </script>
+  </body>
+</html>

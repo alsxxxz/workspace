@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Responsive Web Example</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      .container {
+        text-align: center;
+        background-color: #d0d0d0;
+        display: grid;
+        grid-template-rows: auto;
+        justify-content: space-between;
+      }
+
+      .box {
+        width: 90%;
+        margin: 10px auto;
+        padding: 20px;
+        border-radius: 5px;
+        color: white;
+      }
+
+      /* Mobile (767px 이하) mobile first*/
+      .container {
+        grid-template-columns: 1fr;
+      }
+      .box {
+        background-color: red;
+      }
+      .box::after {
+        content: "Mobile";
+      }
+
+      /* TODO: 01.Tablet(768px - 1023px)에 적합하도록 화면을 재구성해보자.*/
+
+      /*END*/
+
+      /* TODO: 02.Desktop (1280px 이상)에 적합하도록 화면을 재구성해보자. */
+
+      /*END*/
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="box"> </div>
+      <div class="box"> </div>
+      <div class="box"> </div>
+    </div>
+  </body>
+</html>

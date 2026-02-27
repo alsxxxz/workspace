@@ -1,0 +1,64 @@
+<!--05_dom/06_attribute.html-->
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin-bottom: 10px;
+      }
+      button {
+        border: 1px solid red;
+      }
+      .block {
+        display: block;
+      }
+      .none {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <input type="text" id="attr-vs-prop" value="1" /><br />
+    <a href="/05_dom/01_simple_event.html">simple link</a>
+
+    <img src="/resource/facebook.webp" idx="1" data-idx="1" data-no="0" />
+    <img src="/resource/tiktok.webp" idx="2" data-idx="2" />
+  </body>
+  <script>
+    const a = document.querySelector("a");
+    console.log(`attribute: ${a.getAttribute("href")},, property:  ${a.href}`);
+
+    const apCheckInput = document.querySelector("#attr-vs-prop");
+    console.log(
+      "초기 값: ",
+      apCheckInput.getAttribute("value"),
+      apCheckInput.value,
+    ); // 1,1
+
+    apCheckInput.setAttribute("value", 2); // DOM 변경, property 변경
+    console.log(
+      "attr 변경 후: ",
+      apCheckInput.getAttribute("value"),
+      apCheckInput.value,
+    ); //2,2
+
+    apCheckInput.value = 100; // property 변경 - DOM은 변경되지 않음
+    console.log(
+      "property 변경 후: ",
+      apCheckInput.getAttribute("value"),
+      apCheckInput.value,
+    ); //2, 100
+
+    // data-* 속성 활용
+    const img = document.querySelector("img:first-of-type");
+    console.log(
+      "data-* 속성의 활용:",
+      img.getAttribute("data-idx"),
+      img.dataset,
+      img.dataset.idx,
+    );
+  </script>
+</html>

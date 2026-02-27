@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    // 09_ajax/05_asyncawait.html
+    const myPromise = new Promise((성공했다면, 실패했다면) => {
+      console.log(1);
+      setTimeout(() => {
+        const randomValue = Math.random();
+        if (randomValue > 0.5) {
+          console.log(2);
+          성공했다면("success: " + randomValue);
+        } else {
+          console.log(3);
+          실패했다면("fail: " + randomValue);
+        }
+      }, 1000);
+    });
+
+    console.log(myPromise);
+    //TODO: 01.03_promise.html의 코드를 async/await로 변경하시오.
+     const simpleAsync = ()=>{}
+
+    //END
+  </script>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>geolocation api</title>
+    <style>
+      input {
+        width: 80px;
+        margin-bottom: 10px;
+      }
+
+      tr:nth-child(2n) {
+        background: rgba(0, 255, 0, 0.2);
+      }
+
+      tr:nth-child(2n + 1) {
+        background: rgba(0, 0, 255, 0.2);
+      }
+
+      .refresh {
+        width: 450px;
+      }
+
+      td:nth-child(2n + 1) {
+        width: 150px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>당신의 브라우저는..</h1>
+    <ul id="info">
+
+    </div>
+  </body>
+  <script>
+    const navigator = window.navigator;
+    const showInfo = ()=>{
+        const html = `<li>브라우저 코드명: ${navigator.appCodeName}
+            <li>사용자 에이전트: ${navigator.userAgent}
+            <li>브라우저 엔진: ${navigator.product}
+            <li>브라우저 이름: ${navigator.appName}
+            <li>브라우저 언어: ${navigator.language}
+            <li>운영체제 정보: ${navigator.platform}
+            `;
+        document.querySelector("#info").innerHTML = html;
+
+        if (navigator.platform.toLowerCase().includes("Win")) {
+          if (!navigator.userAgent.toLowerCase().includes("chrome")) {
+            alert("원활한 서비스 이용을 위해 Chrome 브라우저를 사용해주세요.");
+          }
+        }
+    }
+    showInfo();
+
+
+  </script>
+</html>

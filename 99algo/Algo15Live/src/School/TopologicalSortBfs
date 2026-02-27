@@ -1,0 +1,32 @@
+import java. io .*;
+
+public class TopologicalSortBfs{
+static int N;
+static List<Integer>[] 6;//
+static int[] indegree;
+
+public static void main(String[] args) throws Exception{
+Scanner sc=new Scanner(System. in);
+#sc.nextInt();
+int E=sc.nextInt();
+G=new List[1+W]; for(int i=0; i<1+N; i++) G[i]=new ArrayList<>();//
+indegree=new int[1+M];|
+for(int i-0; i<E; i++){
+int a=sc.nextInt();
+int b=sc.nextInt();
+G[a].add(b);//
+indegree[b]++;
+
+bfs();
+sc.close();
+
+static void bfs(){
+ArrayDeque<Integer> q=new ArrayDeque<>();
+for(int i=1; i<1+N; i++){
+if(indegree[i] == 0) q.offer(i);
+
+while(!q.isEmpty()){
+int i=q.poll();
+System.out.print(i+" ");
+for(int j:G[i]){
+if( -- indegree[j] == 0) q.offer(j);

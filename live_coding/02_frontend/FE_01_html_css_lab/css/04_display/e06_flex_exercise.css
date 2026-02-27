@@ -1,0 +1,187 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  .container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+
+  .menu-button {
+    font-size: 2.2em;
+  }
+
+  /* Header start---------------------*/
+  .header {
+    padding: 10px;
+  }
+  .search-bar {
+    margin: 0 20px;
+  }
+
+  /* TODO: 01. .header를 flex로 설정하세요. 공백은 요소간 처리하고 아이템들은 가운데 정렬한다.*/
+   .header{} 
+  /*  남는 공간은 .search-bar가 채우도록 한다.*/
+   .search-bar{} 
+
+  /* END*/
+  /* Header end-------------------------*/
+
+  /* Navigation start-------------------*/
+  .nav {
+    padding: 10px;
+    margin-bottom: 20px;
+  }
+  /* TODO: 02. .nav 요소를 가로로 배치하시오. item들은 중앙에 배치하고 간격은 20px로 한다.*/
+   .nav{} 
+
+  /* END*/
+  /* Navigation end---------------------*/
+
+  /* Main Content start-----------------*/
+  /* TODO: 03.main-content가 가지는 .left-section과 .right-section을 flex로 관리하세요.*/
+  /*  요소의 간격은 30px로 하고 width를 변경할 때 .left-section만 변경된다.*/
+  .main-content {     }  .left-section { }
+
+  /* END */
+  .right-section {
+    width: 350px;
+  }
+  /* Main Content end -----------------*/
+
+  /* Login Box start-------------------*/
+  .login-box {
+    background-color: #f9f9f9;
+    padding: 20px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+  }
+
+  .login-form input {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+
+  .login-button {
+    background-color: #19ce60;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  .login-links {
+    font-size: 13px;
+    margin-top: 10px;
+  }
+  /* TODO: 04. login-form의 inline요소인 input등을 세로로 배치하고 화면을 채워보세요.*/
+   .login-form{gap: 10px;}
+  /*  .login-links의 span들을 좌/우로 배치하세요.*/
+   .login-links {} 
+
+  /*END */
+
+  /* Login Box end-------------------*/
+
+  /* News Section start--------------*/
+  .news-section {
+    margin-bottom: 30px;
+  }
+
+  .news-items {
+    padding: 20px 0;
+    border-bottom: 1px solid #eee;
+  }
+  /* TODO: 05. .news-items 내부의 news들을 가로로 배치하시오. 아이템간 간격은 20px*/
+   .news-items{}
+  /*  개별 news-item도 img와 content를 가로로 배치한다. 간격은 15px로 한다..*/
+   .news-item{}
+  /*  news-content는 세로로 배치한다. item으로써는 stretch시 공간이 연동된다. */
+   .news-content{}
+
+  /* END */
+
+  .news-item img {
+    width: 120px;
+    height: 80px;
+    object-fit: cover;
+  }
+
+  .news-content h4 {
+    margin-bottom: 8px;
+    font-size: 14px;
+    line-height: 1.4;
+  }
+
+  .news-content p {
+    color: #666;
+    font-size: 13px;
+    line-height: 1.4;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  /* News Section end--------------*/
+
+  /* Subscribe Section start-------*/
+  /* TODO: 06.구독 항목들을 세로로 배치하시오. 아이템간 간격은 20px로 한다.*/
+   .subscribe-section{}
+  /*  .subscribe-item 자체도 img와 content를 가로로 배치한다. item간 간격은 15px로 한다.*/
+   .subscribe-item{padding-bottom: 15px; border-bottom: 1px solid #eee;}
+  /*  .subscribe-content는 제목과 내용을 세로로 배치한다. item으로써는 크기 조절 시 크기가 연동된다.*/
+   .subscribe-content{justify-content: space-between;}
+
+  /* END */
+
+  .subscribe-item img {
+    width: 120px;
+    height: 80px;
+    object-fit: cover;
+  }
+
+  .subscribe-content h4 {
+    margin-bottom: 8px;
+    font-size: 14px;
+    line-height: 1.4;
+  }
+
+  .subscribe-content p {
+    color: #666;
+    font-size: 13px;
+    line-height: 1.4;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  /* Subscribe Section end-------*/
+
+  /* Widget  start---------------*/
+  /*TODO: 07. .widgets은 아이템들을 세로로 배치한다. item간 간격은 20px로 한다.*/
+   .widgets{}
+
+  /* END*/
+  .widget {
+    background-color: #fff;
+    padding: 20px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+  }
+  /* Widget  end---------------*/
+
+  /* Footer start--------------*/
+  .footer {
+    margin-top: 50px;
+    padding: 20px;
+    background-color: #f9f9f9;
+  }
+  /*TODO: 08. .footer-content는 아이템을 가로로 배치하는데 공백을 아이템들 내부에서 균일하게 가져간다.*/
+   .footer-content{}
+
+  /*END*/
+  /* Footer end--------------*/

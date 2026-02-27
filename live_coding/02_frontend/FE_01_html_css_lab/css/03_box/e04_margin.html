@@ -1,0 +1,30 @@
+<!-- /*블록요소끼리의 상하마진은 병합되며 수평 마진은 각자의 마진을 유지 -> 일반적ㅎ인 거 아닐땐 병합 ㄴㄴ 언제나 병합은 아니다 라고 알아두기
+인라인 요소는 패딩고 ㅏ마찬가지로 좌우마진만 가질 수잇으며 상하마진의미없음*/ -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      div {
+        margin: 25px;
+        border: 10px dashed blue;
+      }
+      span {
+        margin: 40px;
+        border: 10px solid rgba(255, 0, 0, 0.5);
+      }
+    </style>
+  </head>
+  <body>
+    <div>div</div>
+    <div>div</div>
+    <span>span</span><span>span</span><br />
+    <span>span</span>
+  </body>
+</html>

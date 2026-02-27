@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <style>
+      .table1 {
+        /* border-collapse: separate | collapse */
+        border-collapse: collapse;
+
+        /* caption-side: top | bottom */
+        caption-side: bottom;
+      }
+
+      .table2 {
+        /* border-spacing: length | 가로 세로 */
+        border-spacing: 15px;
+        /* table-layout: auto | fixed */
+        table-layout: fixed;
+        /* empty-cells: show | hide */
+        empty-cells: hide;
+      }
+
+      .table2 td:nth-child(2n + 1) {
+        width: 60px;
+        /* vertical-align: baseline | sub | super | text-top | text-bottom | middle | top | bottom */
+        vertical-align: top;
+      }
+
+      td,
+      th {
+        border: 1px solid #000;
+        padding: 10px;
+      }
+    </style>
+
+    <table class="table1">
+      <caption>캡션의 위치를 설정합니다.</caption>
+      <tbody>
+        <tr>
+          <td>테이블의 테두리를 합치는 방법을 설정합니다.</td>
+          <td>Border Collapse 예시</td>
+        </tr>
+      </tbody>
+    </table>
+    <br />
+    <br />
+    <br />
+    <br />
+    <table class="table2">
+      <caption>표2</caption>
+      <tbody>
+        <tr>
+          <td>세로정렬</td><td>세로정렬</td><td></td>
+          <td
+            >Lorem ipsum dolor sit, amet consectetur adipisicing elit. Incidunt atque iure delectus porro dicta? Saepe
+            et vero deserunt eveniet adipisci atque harum porro? Voluptate, animi quia! Doloribus odio ratione facere?
+            Fuga esse reiciendis similique!</td
+          >
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>

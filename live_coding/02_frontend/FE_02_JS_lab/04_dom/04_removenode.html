@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="container">
+      <p id="p1">첫 번째 문단</p>
+      <p id="p2">두 번째 문단</p>
+      <p id="p3">세 번째 문단</p>
+    </div>
+  </body>
+  <script>
+    document.querySelectorAll("p").forEach((item) =>
+      item.addEventListener("dblclick", () => {
+        item.remove();
+      }),
+    );
+  </script>
+</html>

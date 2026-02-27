@@ -1,0 +1,80 @@
+<!DOCTYPE >
+<html lang="ko">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Insert title here</title>
+    <style>
+      #intro {
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>회원가입</h1>
+    <form name="form-login" action="" id="join-form">
+      <fieldset>
+        <legend>로그인 정보</legend>
+        <label for="fid">아이디</label>
+        <input type="text" name="user-id" id="fid" />
+        <label for="fpass">비밀번호</label>
+        <input type="password" name="user-pass" id="fpass" />
+      </fieldset>
+      <hr />
+      <fieldset>
+        <legend>취미를 고르세요.</legend>
+        <input type="checkbox" name="hobby" value="sports" id="hobby-sports" class="hobby" />
+        <label for="hobby-sports">스포츠</label>
+        <input type="checkbox" name="hobby" value="movie" id="hobby-movie" class="hobby" />
+        <label for="hobby-movie">영화관람</label>
+        <input type="checkbox" name="hobby" value="sleep" id="hobby-sleep" class="hobby" />
+        <label for="hobby-sleep">그냥 자기</label>
+        <br />
+        <input type="checkbox" id="hobby-toggle" />
+        <label for="hobby-toggle">전체</label>
+      </fieldset>
+
+      <fieldset>
+        <legend>비밀번호 연상 질문은?</legend>
+        <select id="pass-question">
+          <option>출신 초등학교</option>
+          <option>존경하는 사람</option>
+          <option>가장 감명깊었던 영화</option>
+        </select>
+      </fieldset>
+      <fieldset>
+        <legend>자기소개</legend>
+        <textarea name="intro" id="intro" rows="10" placeholder="선택하면 클립보드에 복사됩니다."></textarea>
+      </fieldset>
+      <button type="button">제출</button>
+      <button type="reset">리셋</button>
+    </form>
+  </body>
+  <script>
+    document.querySelector("#fid").addEventListener("input", (e) => {
+      console.log("input: ", e.target.value);
+    });
+
+    document.querySelector("#fpass").addEventListener("change", (e) => {
+      console.log("change: ", e.target.value);
+    });
+
+    // TODO: 01. #hobby-toggle가 클릭될 때 .hobby가 적용된 요소도 동일한 체크 상태를 갖도록 설정하시오.
+
+    // END
+
+    // TODO: 02. #pass-question의 값이 변경될 때 선택된 요소와 index를 출력하세요.
+
+    // END
+
+    document.querySelector("#intro").addEventListener("select", (e) => {
+      const source = e.currentTarget;
+      const selectedText = window.getSelection().toString();
+      navigator.clipboard.writeText(selectedText);
+      alert("클립보드에 복사되었습니다.");
+    });
+
+    // TODO: 03. #join-form의 submit 이벤트를 처리하면서 #fid를 필수로 처리해보세요.
+
+    // END
+  </script>
+</html>

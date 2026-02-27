@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      #outer {
+        text-align: center;
+      }
+      /* TODO: display 속성을 변경해가면서 화면이 어떻게 변경되는지 확인하세요.*/
+      .inner {
+        display: block;
+      }
+
+      .inner {
+        height: 80px;
+        background-color: rgba(0, 0, 255, 0.5); /*content + padding + border*/
+        border: 10px dashed rgba(0, 255, 0, 0.5);
+        padding: 30px;
+        margin: 10px;
+        outline: 10px solid rgba(255, 0, 0, 0.5); /*margin 역할*/
+      }
+    </style>
+  </head>
+  <body>
+    <div id="outer">
+      <h2>block, inline, inline-block 테스트</h2>
+      <div class="inner">div alone</div><br /><br />
+
+      <div class="inner"> div </div>
+      <div class="inner"> div </div>
+      <br />
+      <div class="inner"> div </div>
+    </div>
+  </body>
+</html>

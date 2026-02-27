@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>여기는 child</title>
+  </head>
+  <body>
+    <input type="text" id="message" placeholder="부모님께" />
+    <button id="btnCloseWindow">창 닫기</button>
+    <ul id="messageList"></ul>
+  </body>
+  <script>
+    document.getElementById("message").addEventListener("keyup", (e) => {
+      // TODO: 01. #message의 내용을 부모창의 postMessage에 전송하세요.
+
+      // END
+    });
+
+    document.getElementById("btnCloseWindow").addEventListener("click", () => {
+      window.close();
+    });
+
+    function listenMessage(msg) {
+      document.getElementById("messageList").innerHTML += `<li>${msg}</li>`;
+    }
+  </script>
+</html>

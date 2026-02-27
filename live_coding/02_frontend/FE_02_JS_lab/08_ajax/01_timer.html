@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>asyncronous</title>
+    <style>
+      #playground {
+        width: 300px;
+        height: 200px;
+        background-color: lightsalmon;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 id="clock"></h1>
+    <div id="playground"></div>
+  </body>
+  <script>
+    console.log(1);
+    setInterval(() => {
+      console.log(2);
+      const now = new Date();
+      const timeString = now.toLocaleTimeString();
+      document.getElementById("clock").textContent = timeString;
+    }, 1000);
+    console.log(3);
+    //TODO: 01. 10초 후 google로 이동하도록 처리하세요.
+
+    //END
+    console.log(4);
+  </script>
+</html>

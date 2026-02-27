@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      .item {
+        background-color: lightblue;
+        padding: 20px;
+        border: 1px solid blue;
+      }
+
+      .container {
+        display: grid;
+        width: 100%;
+        height: 300px;
+        gap: 10px;
+        grid-template-columns: auto auto auto auto;
+        grid-template-rows: auto;
+        grid-template-areas:
+          ". . . ."
+          ". . . ."
+          "footer footer footer footer";
+      }
+      /*TODO: 01. 다음의 요청 사항을 만족시키세요.*/
+      /* 01. item1은 2~3 컬럼을 사용하도록 처리하자.*/
+       #item1{}
+      /* 02. item2은 4번 컬럼에서 1~2 row을 사용하도록 처리하자.*/
+       #item2{}
+      /* 03. item3는 2번행 1번 컬럼에서 2번행3번 컬럼까지로 지정하자.*/
+       #item3{}
+      /* 04. item4는 3행 전체를 사용하는데 grid-template-areas로 지정한 그리드 영역의 이름을 이용해보자.*/
+       #item4{}
+
+      /*END*/
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="item" id="item1">Item 1</div>
+      <div class="item" id="item2">Item 2</div>
+      <div class="item" id="item3">Item 3</div>
+      <div class="item" id="item4">Item 4</div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Absolute Position Examples</title>
+    <style>
+      /* 1. 기본 동작 */
+      .container {
+        position: relative;
+        width: 200px;
+        height: 200px;
+        border: 2px solid #333;
+        margin-bottom: 20px;
+      }
+
+      .box {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        width: 50px;
+        height: 50px;
+        background-color: blue;
+      }
+
+      /* 2. 드롭다운 */
+      .dropdown {
+        display: inline-block;
+      }
+
+      .dropdown-content {
+        background-color: white;
+        min-width: 150px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+      }
+
+      /*TODO: 01.mouse가 메뉴에 올라가면 .dropdown-content가 메뉴 아래에 표시되도록 처리하세요.*/
+      /* 먼저 dropdown-content는 숨겨져 있어야 한다.*/
+       .dropdown-content{}
+      /* .dropdown에 마우스가 올라간 상태에서 자손 .dropdown-content를 보여준다.*/
+      /* 선택자를 써보자. */
+      /* lorem이 움직이지 않으려면 .dropdown-content가 보일 때 다른 요소에게 영향을 주면 안된다 - absolute*/
+       .dropdown{} .dropdown-content{}
+
+      /*END*/
+
+      .dropdown-btn {
+        padding: 10px 20px;
+        background-color: #28a745;
+        color: white;
+        border: none;
+        cursor: pointer;
+      }
+
+      .dropdown-content a {
+        display: block;
+        padding: 10px;
+        text-decoration: none;
+        color: black;
+      }
+
+      .dropdown-content a:hover {
+        background-color: #f0f0f0;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 1. 기본 동작 -->
+    <h3>기본 예제</h3>
+    <div class="container">
+      <div class="box"></div>
+    </div>
+
+    <!-- 2. 드롭다운 -->
+    <h3>드롭다운</h3>
+    <div class="dropdown">
+      <button class="dropdown-btn">메뉴</button>
+      <div class="dropdown-content">
+        <a href="#">항목 1</a>
+        <a href="#">항목 2</a>
+        <a href="#">항목 3</a>
+      </div>
+    </div>
+    <div
+      >Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi repudiandae est provident sed suscipit ut ratione
+      omnis, laborum voluptatem iure.</div
+    >
+  </body>
+</html>

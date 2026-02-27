@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>event</title>
+  </head>
+  <body>
+    <style>
+      .contact-card {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+        border: 1px solid #ccc;
+        width: 400px;
+        padding: 5px 20px;
+      }
+      .profile-img {
+        width: 80px;
+        height: 80px;
+        border-radius: 20%;
+      }
+      .name {
+        flex-grow: 1;
+        font-size: 24px;
+        background-color: tomato;
+      }
+      .call-btn {
+        background-color: #4caf50;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 25px;
+        cursor: pointer;
+      }
+
+      .contact-info {
+        text-align: left;
+      }
+    </style>
+
+    <div class="contact-card" id="target">
+      <img src="https://picsum.photos/100" alt="Profile" class="profile-img" />
+      <div class="name">홍 <span>길동</span></div>
+      <button class="call-btn">📞</button>
+    </div>
+    <hr />
+    <div class="contact-card" id="contact">
+      <img src="https://picsum.photos/100" alt="Profile" class="profile-img" />
+      <div class="name">John Doe</div>
+      <button class="call-btn" id="call">📞</button>
+    </div>
+    <br />
+    <form action="" id="myform">
+      <input type="text" name="name" id="name" placeholder="8글자 이상" />
+      <button type="submit">submit</button
+      ><button type="button" id="btn-submit">button</button>
+    </form>
+  </body>
+  <script>
+    // TODO: 01. target과 currentTarget을 구분해보세요.
+    document.querySelector("#target").addEventListener("click", (e) => {
+      console.log("target: ", e.target);
+      console.log("currentTarget: ", e.currentTarget);
+    });
+
+    // TODO: 02. useCapturing을 true로 변경하고 결과를 비교해보세요.
+    const useCapturing = false;
+    document.querySelector("#contact").addEventListener(
+      "click",
+      (e) => {
+        console.log("연락처로 이동");
+      },
+      useCapturing,
+    );
+    document.querySelector("#call").addEventListener(
+      "click",
+      (e) => {
+        //TODO: 03. 전화걸기만 하고 이벤트 전파를 중지하세요.
+        console.log("전화걸기로 이동");
+      },
+      useCapturing,
+    );
+
+    // TODO: 04. form 전송 시 validation을 체크해보자.
+
+    // END
+  </script>
+</html>

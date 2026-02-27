@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .outer {
+        width: 400px;
+        border: 5px dotted black;
+        /* font-size:0px; */
+      }
+      div > div {
+        width: 200px;
+        height: 100px;
+        background-color: skyblue;
+        padding: 10px;
+        border: 10px solid purple;
+        display: inline-block; /*widthdiv의 display를 inline + block으로 변경함*/
+      }
+      .inner2 {
+        box-sizing: border-box;
+      }
+
+      .content-box {
+        /* TODO: 01. box-sizing을 유지한채 outer에 두개의 .content-box가 가로로 배치되게 해보자.*/
+        width: calc(200px - (10px+10px) *2)
+        /* END*/
+      }
+
+      .border-box {
+        /* TODO: 02. box-sizing을 변경하여 outer에 두 개의 .border-box가 가로로 배치되게 해보자.*/
+        box-sizing: border-box;
+        /* END*/
+      }
+      /* .outer {
+        display: flex;
+      } */
+    </style>
+  </head>
+  <body>
+    <div class="outer">
+      <div class="inner1">inner1: content-box</div>
+      <div class="inner2">inner2: border-box</div>
+      <span>lorem*10</span>
+    </div>
+    <br />
+    <div class="outer">
+      <div class="content-box">content-box</div>
+      <div class="content-box">content-box</div>
+    </div>
+    <div class="outer">
+      <div class="border-box">border-box</div>
+      <div class="border-box">border-box</div>
+    </div>
+  </body>
+</html>

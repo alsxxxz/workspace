@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>window object</title>
+    <style>
+      img {
+        margin: 10px;
+      }
+      #problem {
+        width: 100px;
+        display: inline-block;
+      }
+    </style>
+  </head>
+  <body>
+    <button id="btnStartChange">change</button>
+    <button id="btnStopChange">stop change</button>
+    <div id="sns">
+      <img src="/resource/facebook.webp" alt="facebook" />
+      <img src="/resource/instagram.webp" alt="instagram" />
+      <img src="/resource/tiktok.webp" alt="tiktok" />
+      <img src="/resource/twitter.webp" alt="" />
+    </div>
+    <hr />
+    <button id="btnShowProblem">문제 내기</button>
+    <span id="problem">곱셈퀴즈</span><input type="text" id="answer" />
+  </body>
+  <script>
+    let intervalId; // 주기작업 id가 저장될 변수
+    document.querySelector("#btnStartChange").addEventListener("click", () => {
+      // TODO: 01. btnStartChange가 클릭될 때 1초마다 sns의 이미지를 로테이션 시키세요.
+
+      // END
+    });
+
+    document.querySelector("#btnStopChange").addEventListener("click", () => {
+      // TODO: 02. btnStopChange가 클릭될 때 위에서 설정한 주기 작업이 종료되도록 처리하시오.
+
+      // END
+    });
+
+    let timeoutId, answer; // 시간제한 id와 정답이 저장될 변수
+
+    document.querySelector("#btnShowProblem").addEventListener("click", () => {
+      const num1 = Math.floor(Math.random() * 9) + 1;
+      const num2 = Math.floor(Math.random() * 9) + 1;
+      answer = num1 * num2;
+      document.querySelector("#problem").innerHTML = `${num1} * ${num2} = `;
+      document.querySelector("#answer").value = "";
+      document.querySelector("#answer").focus();
+
+      //TODO: 03. 5초 안에 문제를 풀지 못하면 시간초과 메시지를 띄우고 다시 문제를 내도록 하시오.
+
+      //END
+    });
+
+    document.querySelector("#answer").addEventListener("keydown", (e) => {
+      //TODO: 04. 입력창에서 엔터키를 누르면 입력한 답을 확인하고 정답 여부를 판단하시오.
+      // timeoutId를 이용해 작업을 중지시키고 입력 값 확인 후 추가 문제를 출제한다.
+
+      //END
+    });
+  </script>
+</html>

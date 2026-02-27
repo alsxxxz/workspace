@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <style>
+      p {
+        margin-bottom: 50px;
+        border: 1px solid #333;
+      }
+
+      /* vertical-align: baseline | sub | super | text-top | text-bottom | middle | top | bottom */
+      .v-align {
+        vertical-align: middle;
+      }
+
+      /* text-indent: length | percentage */
+      .t-indent {
+        text-indent: 50px;
+      }
+
+      /* direction: ltr | rtl */
+      .dir {
+        direction: rtl;
+      }
+
+      /* text-align: left | right | center | justify */
+      .t-align {
+        text-align: center;
+      }
+
+      /* overflow: visible | hidden | scroll | auto */
+      .overflow-box {
+        width: 100px;
+        height: 100px;
+        overflow: hidden;
+      }
+
+      /* text-overflow: clip | ellipsis */
+      .t-overflow {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        width: 200px;
+      }
+    </style>
+
+    <p>
+      <img src="https://via.placeholder.com/50" alt="샘플이미지" class="v-align" />
+      이미지와 텍스트의 수직 정렬을 조절할 수 있습니다.
+    </p>
+
+    <p class="t-indent">텍스트의 첫 줄 들여쓰기를 조절할 수 있습니다.</p>
+
+    <p class="dir">텍스트의 작성 방향을 지정할 수 있습니다.</p>
+
+    <p class="t-align">텍스트의 수평 정렬을 조절할 수 있습니다.</p>
+
+    <p class="overflow-box">
+      컨텐츠가 지정된 영역을 벗어날 경우 어떻게 처리할지 결정할 수 있습니다. 이 텍스트는 의도적으로 긴 내용을 작성하여
+      영역을 벗어나게 만든 예시입니다.
+    </p>
+
+    <p class="t-overflow">긴 텍스트가 영역을 벗어날 경우 말줄임표로 처리할 수 있습니다.</p>
+  </body>
+</html>

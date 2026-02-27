@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      div {
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+      }
+    </style>
+  </head>
+  <body>
+    <span>구구단</span><input type="number" id="dan" min="1" max="9" value="2" /><span>단</span>
+    <div>
+      <ul id="gugudan1"></ul>
+      <ul id="gugudan2"></ul>
+      <ul id="gugudan3"></ul>
+      <ul id="gugudan4"></ul>
+    </div>
+  </body>
+  <script>
+    document.querySelector("input").addEventListener("change", (event) => {
+      const dan = event.target.value;
+      poor(dan, document.querySelector("#gugudan1"));
+      //cbh(dan, document.querySelector("#gugudan2"));
+      th(dan, document.querySelector("#gugudan3"));
+      ah(dan, document.querySelector("#gugudan4"));
+    });
+
+    const poor = (dan, target) => {
+      const time = 1000;
+      target.innerHTML = "";
+      target.innerHTML += `<li>${dan}단 출력 시작</li>`;
+      setTimeout(
+        () => {
+          target.innerHTML += `<li>${dan} * 1 = ${dan * 1}</li>`;
+        },
+        Math.floor(Math.random() * 9 + 1) * time,
+      );
+
+      setTimeout(
+        () => {
+          target.innerHTML += `<li>${dan} * 2 = ${dan * 2}</li>`;
+        },
+        Math.floor(Math.random() * 9 + 1) * time,
+      );
+
+      setTimeout(
+        () => {
+          target.innerHTML += `<li>${dan} * 3 = ${dan * 3}</li>`;
+        },
+        Math.floor(Math.random() * 9 + 1) * time,
+      );
+
+      setTimeout(
+        () => {
+          target.innerHTML += `<li>${dan} * 4 = ${dan * 4}</li>`;
+        },
+        Math.floor(Math.random() * 9 + 1) * time,
+      );
+
+      setTimeout(
+        () => {
+          target.innerHTML += `<li>${dan} * 5 = ${dan * 5}</li>`;
+        },
+        Math.floor(Math.random() * 9 + 1) * time,
+      );
+
+      setTimeout(
+        () => {
+          target.innerHTML += `<li>${dan} * 6 = ${dan * 6}</li>`;
+        },
+        Math.floor(Math.random() * 9 + 1) * time,
+      );
+
+      setTimeout(
+        () => {
+          target.innerHTML += `<li>${dan} * 7 = ${dan * 7}</li>`;
+        },
+        Math.floor(Math.random() * 9 + 1) * time,
+      );
+
+      setTimeout(
+        () => {
+          target.innerHTML += `<li>${dan} * 8 = ${dan * 8}</li>`;
+        },
+        Math.floor(Math.random() * 9 + 1) * time,
+      );
+
+      setTimeout(
+        () => {
+          target.innerHTML += `<li>${dan} * 9 = ${dan * 9}</li>`;
+        },
+        Math.floor(Math.random() * 9 + 1) * time,
+      );
+      target.innerHTML += `<li>[${dan}단 출력 완료]</li>`;
+    };
+
+    const cbh = (dan, target) => {
+      const time = 100;
+      target.innerHTML = "";
+      target.innerHTML += `<li>${dan}단 출력 시작</li>`;
+      //TODO: 01. poor 코드를 활용하여 구구단이 순차적으로 처리될 수 있도록 작업하세요.
+      setTimeout(
+        () => {
+          target.innerHTML += `<li>${dan} * 1 = ${dan * 1}</li>`;
+          setTimeout(
+            () => {
+              target.innerHTML += `<li>${dan} * 2 = ${dan * 2}</li>`;
+              setTimeout(
+                () => {
+                  target.innerHTML += `<li>${dan} * 3 = ${dan * 3}</li>`;
+                  setTimeout(
+                    () => {
+                      target.innerHTML += `<li>${dan} * 4 = ${dan * 4}</li>`;
+                      setTimeout(
+                        () => {
+                          target.innerHTML += `<li>${dan} * 5 = ${dan * 5}</li>`;
+                          setTimeout(
+                            () => {
+                              target.innerHTML += `<li>${dan} * 6 = ${dan * 6}</li>`;
+                              setTimeout(
+                                () => {
+                                  target.innerHTML += `<li>${dan} * 7 = ${dan * 7}</li>`;
+                                  setTimeout(
+                                    () => {
+                                      target.innerHTML += `<li>${dan} * 8 = ${dan * 8}</li>`;
+                                      setTimeout(
+                                        () => {
+                                          target.innerHTML += `<li>${dan} * 9 = ${dan * 9}</li>`;
+                                          target.innerHTML += `<li>${dan}단 출력 완료</li>`;
+                                        },
+                                        Math.floor(Math.random() * 9 + 1) * time,
+                                      );
+                                    },
+                                    Math.floor(Math.random() * 9 + 1) * time,
+                                  );
+                                },
+                                Math.floor(Math.random() * 9 + 1) * time,
+                              );
+                            },
+                            Math.floor(Math.random() * 9 + 1) * time,
+                          );
+                        },
+                        Math.floor(Math.random() * 9 + 1) * time,
+                      );
+                    },
+                    Math.floor(Math.random() * 9 + 1) * time,
+                  );
+                },
+                Math.floor(Math.random() * 9 + 1) * time,
+              );
+            },
+            Math.floor(Math.random() * 9 + 1) * time,
+          );
+        },
+        Math.floor(Math.random() * 9 + 1) * time,
+      );
+    };
+
+    function makePromise(dan, num, target) {
+      return new Promise((onfulfilled, onrejected) => {
+        setTimeout(
+          () => {
+            target.innerHTML += `<li>${dan} * ${num} = ${dan * num}</li>`;
+            onfulfilled(num + 1);
+          },
+          Math.floor(Math.random() * 9 + 1) * 100,
+        );
+      });
+    }
+
+    const th = (dan, target) => {
+      target.innerHTML = "";
+      target.innerHTML += `<li>${dan}단 출력 시작</li>`;
+      //TODO: 02. makePromise를 이용하여 구구단이 순차적으로 처리될 수 있도록 작업하세요.
+
+      //END
+    };
+
+    const ah = async (dan, target) => {
+      target.innerHTML = "";
+      target.innerHTML += `<li>${dan}단 출력 시작</li>`;
+      //TODO: 03. async, await를 이용하여 구구단이 순차적으로 처리될 수 있도록 작업하세요.
+
+      //END
+    };
+  </script>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fixed Position Example</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+      }
+
+      #navbar {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        background-color: #333;
+        color: white;
+        padding: 15px;
+        z-index: 100;
+      }
+
+      #content {
+        margin-top: 60px;
+        padding: 20px;
+      }
+
+      .content-section {
+        height: 400px;
+        margin-bottom: 20px;
+        background-color: #f0f0f0;
+        padding: 20px;
+      }
+
+      #top-button {
+        /*TODO: 01.#top-button이 우측아래에서 각각 20px 지점에 고정되도록 하세요.*/
+
+        /*END*/
+        background-color: #333;
+        color: white;
+        padding: 10px 15px;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+
+     #content > h1 {
+       /*TODO: 02.top 50px 이하로 들어가면 그 위치에 고정하게 해보자.*/
+
+       /*END*/
+      }
+    </style>
+  </head>
+  <body>
+    <nav id="navbar"> Fixed Navigation Bar </nav>
+
+    <div id="content">
+      <div class="content-section">Section 1</div>
+      <div class="content-section">Section 2</div>
+      <div class="content-section">Section 3</div>
+      <div class="content-section">Section 4</div>
+    </div>
+
+    <div id="top-button" onclick="window.scrollTo({top: 0, behavior: 'smooth'})"> ↑ Top </div>
+  </body>
+</html>

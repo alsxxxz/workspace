@@ -1,0 +1,72 @@
+<!--05_dom/06_attribute.html-->
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin-bottom: 10px;
+      }
+      button {
+        border: 1px solid red;
+      }
+
+      .none {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <button onclick="styleInput()" style="font-size: 20px">스타일 변경</button>
+    <fieldset>
+      <legend>SNS</legend>
+      <img src="/resource/facebook.webp" alt="facebook" />
+      <img src="/resource/instagram.webp" alt="instagram" class="none" />
+      <img src="/resource/tiktok.webp" alt="tiktok" class="none" />
+      <img src="/resource/twitter.webp" alt="twitter" class="none" />
+    </fieldset>
+    <input
+      type="checkbox"
+      id="facebook"
+      name="sns"
+      checked
+      onchange="update()"
+    /><label for="facebook">facebook</label>
+    <input
+      type="checkbox"
+      id="instagram"
+      name="sns"
+      onchange="update()"
+    /><label for="instagram">instagram</label>
+    <input type="checkbox" id="tiktok" name="sns" onchange="update()" /><label
+      for="tiktok"
+      >tiktok</label
+    >
+    <input type="checkbox" id="twitter" name="sns" onchange="update()" /><label
+      for="twitter"
+      >twitter</label
+    >
+  </body>
+  <script>
+    const styleInput = () => {
+      const button = event.target;
+      // attribute는 문자열 : style(attribute):  font-size: 20px
+      console.log("style(attribute): ", button.getAttribute("style"));
+      // property는 객체 : style(property):  20px
+      console.log("style(property): ", button.style);
+
+      const styles = getComputedStyle(button);
+      console.log(`style(computed): ${styles["border"]}`);
+    };
+
+    const update = () => {
+      const source = event.target;
+      console.log(source, source.checked, source.getAttribute("checked"));
+      //TODO: 01. checkbox의 상태에 따라 이미지를 보이거나 숨기도록 구현해보세요.
+
+      //END
+    };
+  </script>
+</html>

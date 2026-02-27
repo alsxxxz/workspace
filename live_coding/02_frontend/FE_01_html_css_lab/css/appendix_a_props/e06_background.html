@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <style>
+      div {
+        /* 기본 스타일 */
+        border: 10px solid rgba(0, 0, 0, 0.3);
+        padding: 20px;
+        margin: 20px;
+        height: 200px;
+        width: 80%;
+      }
+      .background-color {
+        background-color: bisque;
+      }
+      .background-image {
+        /* 배경 관련 속성들 */
+        background-color: #e0e0e0;
+        background-image: url("https://picsum.photos/800/400");
+        /* left top | right bottom | center center | x% y% | xpx ypx */
+        background-position: center center;
+        /* padding-box | border-box | content-box */
+        background-origin: padding-box;
+        /* scroll | fixed | local */
+        background-attachment: scroll;
+        /* 추가 유용한 속성들 */
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+
+    </style>
+
+    <div class="background-color">컬러를 활용한 배경입니다.</div>
+    <div class="background-image">이미지를 활용한 배경입니다.</div>
+  </body>
+</html>

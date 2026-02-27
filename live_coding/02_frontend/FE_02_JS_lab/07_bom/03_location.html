@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>location object</title>
+    <style>
+      div {
+        margin: 20px 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <button id="btnLocationInfo">location 정보 출력</button>
+    <button id="btnChangeHref">href 싸피로!!</button>
+    <button id="btnReplaceHref">replace로 구글로</button>
+    <button id="btnReload">새로 고침</button>
+    <div id="content"></div>
+  </body>
+  <script>
+    document.querySelector("#btnLocationInfo").addEventListener("click", () => {
+      let content = document.getElementById("content");
+      content.innerHTML = `
+      href: ${location.href}<br>
+      protocol: ${location.protocol}<br>
+      host: ${location.host}<br>
+      hostname: ${location.hostname}<br>
+      port: ${location.port}<br>
+      pathname: ${location.pathname}<br>
+      search: ${location.search}
+    `;
+    });
+
+    document.querySelector("#btnChangeHref").addEventListener("click", () => {
+      // TODO: 01. href 싸피로!! 클릭 시 location.href로 ssafy.com으로 이동하시오.
+
+      // END
+    });
+
+    document.querySelector("#btnReplaceHref").addEventListener("click", () => {
+      // TODO: 02. replace로 구글로 클릭 시 location.replace()로 google.com으로 이동하시오.
+      // location.href와 location.replace()의 동작 결과를 비교하시오.
+
+      // END
+    });
+
+    document.querySelector("#btnReload").addEventListener("click", () => {
+      location.reload();
+    });
+  </script>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>window object</title>
+  </head>
+  <body>
+    <button id="btnOpenChildWindow">새창열기</button>
+    <button id="btnCloseChildWindow">새창닫기</button><br />
+    <input type="text" placeholder="자식에게 한마디" id="message" />
+    <button id="btnAskQuestion">Prompt</button>
+    <button id="btnConfirm">Confirm</button>
+    <br />
+    <ul id="messageList"></ul>
+  </body>
+  <script>
+    let child;
+    document.querySelector("#btnOpenChildWindow").addEventListener("click", () => {
+      // TODO: 01. 새창열기가 클릭될 때 01-01_child.html 을 새 창에서 여시오. 단 해당 창의 레퍼런스를 child에 할당하시오.
+
+      // END
+    });
+
+    // TODO: 02. 새창닫기가 클릭될 때 위에서 연 창을 닫으시오.
+
+    // END
+
+    document.getElementById("message").addEventListener("keyup", (e) => {
+      if (!child) {
+        return;
+      }
+      const src = e.target;
+      if (e.key === "Enter" && src.value) {
+        child.listenMessage(src.value);
+        src.value = "";
+      }
+    });
+
+    document.querySelector("#btnAskQuestion").addEventListener("click", () => {
+      let num1 = Math.floor(Math.random() * 9) + 1;
+      let num2 = Math.floor(Math.random() * 9) + 1;
+      let answer = prompt(num1 + " * " + num2, "정답을 입력하세요.");
+      alert("당신의 답은 : " + answer + ", 정답은 " + num1 * num2);
+    });
+
+    document.querySelector("#btnConfirm").addEventListener("click", () => {
+      let answer = confirm("쉬시겠습니까?");
+      alert("당신의 답은 : " + answer);
+    });
+
+    //TODO: 주의! 서로 다른 창에서 호출 시 arrow 함수 형태로는 호출되지 않음
+    function postMessage(msg) {
+      console.log("called: ", msg);
+      document.getElementById("messageList").innerHTML += `<li>${msg}</li>`;
+    }
+  </script>
+</html>

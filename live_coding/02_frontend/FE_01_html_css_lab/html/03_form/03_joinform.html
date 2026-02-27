@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      form > fieldset > label {
+        display: inline-block;
+        width: 100px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>회원 가입</h1>
+    <!--TODO: 01. /join 경로를 호출한다. 회원 가입에 적합한 method는?-->
+     <form>
+
+      <!--END-->
+
+      <fieldset>
+        <legend>로그인 정보</legend>
+        <!--TODO: 02. id를 입력받기 위한 label과 input을 작성한다. id는 최대 20자이고 필수 입력 항목이다.-->
+
+        <!--END-->
+        <br />
+        <!--TODO: 03. password를 입력받기 위한 label과 input을 작성한다. password는 최소 8자, 최대 16자이고 필수 입력 항목이다.-->
+
+      <!--END-->
+      <br />
+      <fieldset>
+        <legend>개인 정보</legend>
+        <!--TODO: 04. email 확인을 위한 label과 input을 작성한다. email은 필수 입력 항목이다.-->
+
+        <!--END-->
+        <br />
+
+        <!--TODO: 05. 생년월일을 입력받기 위한 label과 input을 작성한다. 생년월일은 1900-01-01부터 2100-12-31 사이의 값이어야 한다.-->
+
+        <!--END-->
+        <br />
+        <label>성별:</label>
+        <span>
+          <!--TODO: 06.성별을 입력받기 위해 radio 버튼을 구성해보자.-->
+
+          <!--END-->
+        </span>
+      </fieldset>
+      <br />
+      <div>
+        <fieldset>
+          <legend>약관 동의</legend>
+          <!--TODO: 07. 서비스 이용 약관, 개인정보 처리 방침, 마케팅 정보 수신 동의를 위한 checkbox를 구성해보자.-->
+          <!-- 서비스 이용 약관은 기본적으로 checked 상태로 한다.-->
+
+          <!--END-->
+        </fieldset>
+      </div>
+      <button type="submit">가입하기</button>
+      <button type="reset">새로하기</button>
+    </form>
+  </body>
+</html>

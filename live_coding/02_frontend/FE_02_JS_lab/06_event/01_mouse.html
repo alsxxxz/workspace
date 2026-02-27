@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>mouse event</title>
+    <style>
+      * {
+        margin-bottom: 10px;
+      }
+      div {
+        width: 200px;
+        height: 200px;
+        background-color: lightgreen;
+      }
+    </style>
+  </head>
+  <body>
+    <button ondblclick="handleDoubleClick(event)" style="width: 150px">
+      두번씩 눌러주세요
+    </button>
+    <div id="playground">move move move</div>
+  </body>
+  <script>
+    //TODO: 01. 버튼을 더블클릭할 때마다 이벤트 소스의 가로 길이를 20px씩 늘려주세요.
+    const handleDoubleClick = (e) => {
+      const source = e.target;
+      source.style.width = Number.parseInt(source.style.width) + 20 + "px";
+    };
+
+    //END
+
+    const playground = document.querySelector("#playground");
+    //TODO: 02. 마우스 이벤트에 따라 playground의 배경색을 변경하세요.
+
+    //END
+
+    // TODO: 03. 마우스 이동 시 요소 내에서의 좌표를 출력해보자.
+
+    // END
+  </script>
+</html>
