@@ -12,7 +12,9 @@ public class Solution_5643_키순서_서울_8반_박민주 {
         int cnt = 1;
         v[Node] = true;
         for (int next : G.get(Node)) {
-            cnt += dfs(next, G);
+            if (!v[next]) { //방문체크 해야함
+                cnt += dfs(next, G);
+            }
         }
         return cnt;
     }
@@ -26,6 +28,8 @@ public class Solution_5643_키순서_서울_8반_박민주 {
             bigger = new ArrayList<>();
             int ans = 0;
             for (int i = 0; i <= N; i++) {
+                //1부터 N은 인덱스 0~ N-1번 반복
+                //이건 인덱스이니 0부터 시작해서 N까지 가야 N까지감
                 smaller.add(new ArrayList<>());
                 bigger.add(new ArrayList<>());
             }
@@ -38,6 +42,7 @@ public class Solution_5643_키순서_서울_8반_박민주 {
                 bigger.get(S).add(B);
             }
             for (int i = 1; i <= N; i++) {
+                //크기는 항상 +1
                 v = new boolean[N + 1];
                 int ss = dfs(i, smaller) - 1;
 
